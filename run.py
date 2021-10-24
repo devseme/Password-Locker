@@ -28,10 +28,10 @@ def generate_password(length=7):
     '''
     Function that allows users to generate passwords
     '''
-    gen_pass = Credentials.generate_password()
-    return gen_pass
-    # characters = string.ascii_letters + string.digits + string.punctuation
-    # return ''.join(random.choice(characters) for i in range(length))
+    # gen_pass = Credentials.generate_password()
+    # return gen_pass
+    characters = string.ascii_letters + string.digits + string.punctuation
+    return ''.join(random.choice(characters) for i in range(length))
 
 
 
@@ -119,20 +119,49 @@ def main():
                      break
                  else:
                      print("Please try again buddy")   
-
-
                
-        save_credentials(create_credentials(user_name, account,userPassword))  
-        print('\n')
-        print(f"The New credentials for {user_name} ,*{account}* account and the username for the account is *{user_name}* password **{userPassword}**")
-        print('\n')
+            save_credentials(create_credentials(user_name, account,userPassword))  
+            print('\n')
+            print(f"The New credentials for {user_name} ,*{account}* account and the username for the account is *{user_name}* password **{userPassword}**")
+            print('\n')
 
-       
- 
-        
-                   
+        elif user_reply =='li':
+            print("-"*50) 
+            print(' ') 
+            print(f'please fill in your login details')
+            print('Your username is....')
+            user_name = input()
+
+            print("password....")
+            userPassword = input()
+
+            for password in Password. password_list:
+                if password==userPassword:
+                    print("You already registered buddy")
+                else:
+                    print("You already logged in to your account")
+                    break
+
+                print('\n') 
+
+        elif user_reply =='dc':
+            print(' ')
+            if display_credentials():
+                print("This is your credentials list:") .lower().strip()
+                print(' ')
+                for credentials in display_credentials():
+                    # print(f"Social Account:{credentials.account,Password:{credentials.userPassword")
+                 print('')  
+            else:
+                print('')
+                print('No credentials are saved')
+                print('')
+        elif user_reply =='ex':
+            print('thanks for visiting us!') 
+            break
+        else:
+            print('enter user codes as displayed please!')              
 
                     
 if __name__ == '__main__':
-
     main()
