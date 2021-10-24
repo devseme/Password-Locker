@@ -14,6 +14,11 @@ class testPassword(unittest.TestCase):
         self.assertEqual(self.new_password.user_name,"ian") 
         self.assertEqual(self.new_password.user_password,"1234")   
 
+    def test_saving(self):
+        self.new_password.save_password()
+        print(Password.password_list)
+        self.assertEqual(len(Password.password_list),1)  
+
 
 
 if __name__ ==  '__main__':
