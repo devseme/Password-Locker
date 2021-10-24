@@ -18,3 +18,9 @@ chmod +x run.py
 loging in and display bugs
 ## Technologies Used
 python3.8
+
+## Support and contact details
+Reach out to me through my email @ semeochenge@gmail.com 
+### License
+*{MIT.}*
+Copyright (c) {2021} **{Ian Ochenge}**
