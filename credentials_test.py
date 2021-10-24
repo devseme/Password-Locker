@@ -27,7 +27,15 @@ class testCredentials(unittest.TestCase):
         self.new_credentials.save_credentials()
         another_credentials =Credentials("justine","Instagram","12345")
         another_credentials.save_credentials()
-        self.assertEqual(len(Credentials.credentials_list),2)    
+        self.assertEqual(len(Credentials.credentials_list),2)  
+
+    def test_delete_Credentials(self):
+        self.new_credentials.save_credentials()
+        another_credentials =Credentials("justine","Instagram","12345")
+        another_credentials.save_credentials()
+
+        self.new_credentials.delete_credentials()
+        self.assertEqual(len(Credentials.credentials_list),1)  
 
 
 if __name__ ==  '__main__':
