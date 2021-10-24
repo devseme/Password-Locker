@@ -1,6 +1,6 @@
 class Password:
      '''
-      initialized the instances 
+      initialized the user Password Class instances 
      '''
 
 
