@@ -24,6 +24,16 @@ def delete_password(Password):
     Password.delete_password()
 
 
+def generate_password(length=7):
+    '''
+    Function that allows users to generate passwords
+    '''
+    gen_pass = Credentials.generate_password()
+    return gen_pass
+    # characters = string.ascii_letters + string.digits + string.punctuation
+    # return ''.join(random.choice(characters) for i in range(length))
+
+
 
 def create_credentials(user_name, account,user_password):
     '''
@@ -80,4 +90,49 @@ def main():
             save_password(create_password(userName,userPassword))
             print('\n')
             print(f"Your new account:user name is {userName} and the password is {userPassword}")
-            print()
+            print('\n')
+
+        elif user_reply == 'cc':
+            print("create a new credential for account")
+            print("*"*100)
+
+            print("Your User name....")
+            userName =input()
+
+            print("Social Accout...")
+            account =input()
+
+            while True:
+
+                 print("*"*50)
+                 print("choose an option to set a password: ep-enter a password ,gp-generate a password, ex-exit")
+                 Password_code = input('Enter the chosen option...')
+                 print("*"*50)
+                 if Password_code =='ep':
+                      print(" ")
+                      userPassword =input("Enter your password.....")
+                      break
+                 elif Password_code =='gp':
+                     userPassword = generate_password()
+                     break 
+                 elif  Password_code =='ex': 
+                     break
+                 else:
+                     print("Please try again buddy")   
+
+
+               
+        save_credentials(create_credentials(user_name, account,userPassword))  
+        print('\n')
+        print(f"The New credentials for {user_name} ,*{account}* account and the username for the account is *{user_name}* password **{userPassword}**")
+        print('\n')
+
+       
+ 
+        
+                   
+
+                    
+if __name__ == '__main__':
+
+    main()
