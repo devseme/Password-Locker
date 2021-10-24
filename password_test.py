@@ -16,7 +16,7 @@ class testPassword(unittest.TestCase):
 
     def tearDown(self):
         Password.password_list =[]
-        
+
     def test_saving(self):
         self.new_password.save_password()
         print(Password.password_list)
@@ -27,6 +27,15 @@ class testPassword(unittest.TestCase):
         another_password =Password("justine","12345")
         another_password.save_password()
         self.assertEqual(len(Password.password_list),2)
+
+    def test_delete_password(self):
+        self.new_password.save_password()
+        another_password =Password("justine","12345")
+        another_password.save_password()
+
+        self.new_password.delete_password()
+        self.assertEqual(len(Password.password_list),1)
+
 
 
 
