@@ -17,5 +17,13 @@ class Credentials:
           Credentials.credentials_list.append(self) 
 
      def delete_credentials(self):
-          Credentials.credentials_list.remove(self)        
+          Credentials.credentials_list.remove(self) 
+
+     @classmethod
+     def credentials_exists(cls,account):
+        for credentials in cls.credentials_list:
+            if credentials.account ==account:
+                return True
+        return False    
+
          

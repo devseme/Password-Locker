@@ -37,6 +37,16 @@ class testCredentials(unittest.TestCase):
         self.new_credentials.delete_credentials()
         self.assertEqual(len(Credentials.credentials_list),1)  
 
+    def test_check_credentials_exists(self): 
+        self.new_credentials.save_credentials()
+        another_credentials =Credentials("justine","Instagram","12345")
+        another_credentials.save_credentials()
+
+        credentials_exists=Credentials.credentials_exists("Instagram")
+
+        self.assertTrue(credentials_exists)
+
+
 
 if __name__ ==  '__main__':
     unittest.main()
