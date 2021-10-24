@@ -12,12 +12,21 @@ class testPassword(unittest.TestCase):
 
     def test_init(self): 
         self.assertEqual(self.new_password.user_name,"ian") 
-        self.assertEqual(self.new_password.user_password,"1234")   
+        self.assertEqual(self.new_password.user_password,"1234")  
 
+    def tearDown(self):
+        Password.password_list =[]
+        
     def test_saving(self):
         self.new_password.save_password()
         print(Password.password_list)
         self.assertEqual(len(Password.password_list),1)  
+
+    def test_multiple_saves(self):
+        self.new_password.save_password()
+        another_password =Password("justine","12345")
+        another_password.save_password()
+        self.assertEqual(len(Password.password_list),2)
 
 
 
