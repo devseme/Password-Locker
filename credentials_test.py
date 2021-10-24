@@ -13,7 +13,13 @@ class testCredentials(unittest.TestCase):
     def test_init(self): 
         self.assertEqual(self.new_credentials.user_name,"ian") 
         self.assertEqual(self.new_credentials.account,"twitter")  
-        self.assertEqual(self.new_credentials.user_password,"1234")  
+        self.assertEqual(self.new_credentials.user_password,"1234") 
+
+    def test_saving(self):
+        self.new_credentials.save_credentials()
+        print(Credentials.credentials_list)
+        self.assertEqual(len(Credentials.credentials_list),1)
+
 
 if __name__ ==  '__main__':
     unittest.main()
