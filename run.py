@@ -137,7 +137,7 @@ def main():
 
             for password in Password. password_list:
                 if password==userPassword:
-                    print("You already registered buddy")
+                    print("You already registered!")
                 else:
                     print("You already logged in to your account")
                     break
@@ -150,8 +150,8 @@ def main():
                 print("This is your credentials list:") .lower().strip()
                 print(' ')
                 for credentials in display_credentials():
-                    # print(f"Social Account:{credentials.account,Password:{credentials.userPassword")
-                 print('')  
+                    print(f"Social Account:{credentials.account,Password:{credentials.userPassword}}")
+                print('')  
             else:
                 print('')
                 print('No credentials are saved')
