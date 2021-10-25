@@ -24,12 +24,11 @@ def delete_password(Password):
     Password.delete_password()
 
 
-def generate_password(length=7):
+def generate_password(length=5):
     '''
-    Function that allows users to generate passwords
+    Function that allows users to generate randomn passwords
     '''
-    # gen_pass = Credentials.generate_password()
-    # return gen_pass
+  
     characters = string.ascii_letters + string.digits + string.punctuation
     return ''.join(random.choice(characters) for i in range(length))
 
@@ -74,7 +73,7 @@ def main():
     print('\n')
 
     while True:
-        print("please choose: ca- to create an account,cc -to create credentials, li-to log in to your account,dc -to displaycredentials, ex-to exit")
+        print("please choose: ca- to create an account,cc -to create credentials, li-to log in to your account,dc -to display credentials, ex-to exit")
         user_reply=input().lower()
 
         if user_reply == 'ca':
@@ -111,6 +110,7 @@ def main():
                  if Password_code =='ep':
                       print(" ")
                       userPassword =input("Enter your password.....")
+
                       break
                  elif Password_code =='gp':
                      userPassword = generate_password()
@@ -139,29 +139,31 @@ def main():
                 if password==userPassword:
                     print("You already registered!")
                 else:
-                    print("You already logged in to your account")
+                    print("You are already logged in to your account")
                     break
 
                 print('\n') 
 
         elif user_reply =='dc':
-            print(' ')
+            print('*'*50)
             if display_credentials():
-                print("This is your credentials list:") .lower().strip()
+                print("This is your credentials list:")  .lower().strip()
                 print(' ')
                 for credentials in display_credentials():
-                    print(f"Social Account:{credentials.account,Password:{credentials.userPassword}}")
+                    print(f" {credentials.user_name} {credentials.account} {credentials.userPassword}")
                 print('')  
             else:
                 print('')
-                print('No credentials are saved')
+                print('No credentials are currently saved')
                 print('')
         elif user_reply =='ex':
-            print('thanks for visiting us!') 
+            print('thank you for visiting us!') 
             break
         else:
-            print('enter user codes as displayed please!')              
+            print('Please enter the user codes as displayed')              
 
                     
 if __name__ == '__main__':
+
+
     main()
