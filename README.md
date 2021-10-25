@@ -12,8 +12,7 @@ $ git clone https://github.com/devseme/Password-Locker.git
 
 $ cd password-locker
 ## How to Run The App
-###chmod +x 
-###run.py
+./run.py
 
 
 ## Known Bugs
