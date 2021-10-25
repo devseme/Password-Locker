@@ -4,33 +4,41 @@ class Credentials:
      '''
 
 
-     credentials_list =[]
+     credentials_list =[] #empty credentials list
      def __init__(self, user_name, account,user_password):
         '''
-        defining the properties to be shown in credentials class
+        The method defining the properties to be shown in credentials class
         '''
         self.user_name=user_name
         self.account=account
         self.user_password=user_password
 
      def save_credentials(self):
-          Credentials.credentials_list.append(self) 
+         '''
+         Method to save the entered credentials
+         '''
+         Credentials.credentials_list.append(self) 
 
      def delete_credentials(self):
-          Credentials.credentials_list.remove(self) 
+         '''
+         Method to delete credentials
+         '''
+         Credentials.credentials_list.remove(self) 
 
      @classmethod
      def credentials_exists(cls,account):
-        for credentials in cls.credentials_list:
+         '''
+         Method to check if a particular credentials exists
+         '''
+         for credentials in cls.credentials_list:
             if credentials.account ==account:
                 return True
-        return False 
+         return False 
 
      @classmethod
      def display_credentials(cls):
-        '''
-        method that returns the contact list
-        '''
-        return cls.credentials_list   
+         '''
+          method that returns the credentials list
+         '''
 
-         
+         return cls.credentials_list

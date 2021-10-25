@@ -62,7 +62,7 @@ def check_credentials_exists(Credentials):
 
 def display_credentials(Credentials):
     '''
-    returns all the saved credentials in our Credentials class
+    Function that returns all the saved credentials in our Credentials class
     '''
     return Credentials.display_credentials() 
 
